@@ -206,6 +206,14 @@ def home():
         "endpoint": "POST /pipeline"
     })
 
+@app.route("/pipeline", methods=["GET", "POST"])
+def pipeline():
+    if request.method == "GET":
+        return jsonify({
+            "status": "Pipeline running",
+            "endpoint": "Use POST with JSON body"
+        }), 200
+
 import os
 
 if __name__ == "__main__":
