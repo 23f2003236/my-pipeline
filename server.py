@@ -3,8 +3,13 @@ import requests
 import sqlite3
 import json
 from datetime import datetime
+from flask_cors import CORS
+
 
 app = Flask(__name__)
+CORS(app, resources={r"/*": {"origins": "*"}})
+
+
 DB_FILE = "pipeline_data.db"
 
 # ================= DATABASE SETUP =================
